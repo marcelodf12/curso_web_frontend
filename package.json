@@ -1,0 +1,31 @@
+{
+    "name": "curso-web-frontend-angularjs",
+    "version": "0.0.1",
+    "description": "Curso de programación con AngularJS",
+    "bugs": {
+        "url": "https://github.com/marcelodf12/curso_web_frontend/issues",
+        "email": "marcelodf12@gmail.com"
+    },
+    "license": "MIT",
+    "author": "Marcelo Daniel Franco <marcelodf12@gmail.com>",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/marcelodf12/curso_web_frontend"
+    },
+    "dependencies": {
+        "jshint-stylish": "^2.2.1"
+    },
+    "devDependencies": {
+        "connect-history-api-fallback": "^1.5.0",
+        "gulp": "^3.9.1",
+        "gulp-connect": "^5.5.0",
+        "gulp-if": "^2.0.2",
+        "gulp-jshint": "^2.1.0",
+        "gulp-minify-css": "^1.2.4",
+        "gulp-stylus": "^2.7.0",
+        "gulp-uglify": "^3.0.1",
+        "gulp-useref": "^3.1.5",
+        "jshint": "^2.9.6",
+        "nib": "^1.1.2"
+    }
+}
