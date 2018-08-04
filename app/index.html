@@ -1,12 +1,105 @@
 <!doctype html>
-<html lang="en">
+<html lang="es" ng-app="app">
   <head>
     <meta charset="UTF-8">
+    <base href="/">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Curso de Programación Web">
+    <link rel="icon" type="image/x-icon" href="./favicon.ico"/>
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css" />
+    <title>Tracking</title>
+    <!-- bower:css -->
+    <link rel="stylesheet" href="lib/components-font-awesome/css/fontawesome-all.css" />
+    <!-- endbower -->
+    <!-- inject:css -->
     <link rel="stylesheet" href="/stylesheets/main.css">
-    <title>Ejemplo</title>
+    <!-- endinject -->
   </head>
-  <body>
-    Hola Mundo!
+  <body ng-controller="mainCtrl">
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow" ng-show="isAuthenticated">
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">
+        <span data-feather="package"></span>
+        Rastreo de Paquetes
+      </a>
+      <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+      <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+          <a class="nav-link" href="login" >Salir</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar" ng-show="isAuthenticated">
+          <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link active" href="#">
+                  <span data-feather="home"></span>
+                  Inicio <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="grid"></span>
+                  Paquetes
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="truck"></span>
+                  Delivery
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="user"></span>
+                  Usuarios
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="users"></span>
+                  Clientes
+                </a>
+              </li>
+            </ul>
+
+          </div>
+        </nav>
+        <div class="container" ng-view="">
+          <!-- Contenido	-->
+          <!-- End-Contenido	-->
+        </div>
+      </div>
+    </div>
+
+      <!-- Bootstrap core JavaScript
+      ================================================== -->
+      <!-- Placed at the end of the document so the pages load faster -->
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+
+      <!-- Icons -->
+      <script src="scripts/others/feather.min.js"></script>
+      <script>
+        feather.replace()
+      </script>
+
+
+
+
+    <!-- bower:js -->
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular-route/angular-route.js"></script>
+    <script src="lib/angular-resource/angular-resource.js"></script>
+    <!-- endbower -->
+    <!-- inject:js -->
+    <script src="/scripts/main.js"></script>
+    <script src="/scripts/others/popper.min.js"></script>
+    <script src="/scripts/modules/login/login.js"></script>
+    <script src="/scripts/modules/home/home.js"></script>
+    <!-- endinject -->
   </body>
-  <script src="/scripts/main.js"></script>
 </html>

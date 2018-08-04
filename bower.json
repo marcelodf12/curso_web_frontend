@@ -1,6 +1,12 @@
 {
-    "name": "curso-web-frontend-angularjs",
-    "version": "0.0.1",
-    "description": "Curso de programación con AngularJS",
-    "dependencies": {}
+  "name": "curso-web-frontend-angularjs",
+  "version": "0.0.1",
+  "description": "Curso de programación con AngularJS",
+  "dependencies": {
+    "angular": "^1.7.2",
+    "bootstrap": "^4.1.3",
+    "angular-route": "^1.7.2",
+    "angular-resource": "^1.7.2",
+    "components-font-awesome": "^5.0.6"
+  }
 }
