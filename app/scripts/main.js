@@ -1,5 +1,7 @@
 'use strict';
 var trackApp = angular.module('app', ['ngRoute']);
+
+
 trackApp.config(['$routeProvider','$locationProvider', function($routeProvider,$locationProvider) {
 	$locationProvider.html5Mode(true);
   $routeProvider
@@ -10,6 +12,14 @@ trackApp.config(['$routeProvider','$locationProvider', function($routeProvider,$
     .when('/home', {
       templateUrl: 'scripts/modules/home/home.html',
       controller: 'homeCtrl'
+    })
+    .when('/usuarios', {
+      templateUrl: 'scripts/modules/usuarios/listar_usuarios.html',
+      controller: 'usuariosListarCtrl'
+    })
+    .when('/usuario/:id', {
+      templateUrl: 'scripts/modules/usuarios/usuario.html',
+      controller: 'usuarioCtrl'
     })
     .otherwise({
       templateUrl: '404.html'
@@ -29,8 +39,8 @@ trackApp.constant('config', {
 trackApp.controller('mainCtrl', ['$scope', '$location', function($scope, $location) {
 
   $scope.logout = function (){
-    $scope.isAuthenticated = false;
-    $location.path('login/');
+    $scope.isAuthenticated = true;
+    $location.path('home/');
   };
 
   if(typeof($scope.isAuthenticated) === 'undefined'){

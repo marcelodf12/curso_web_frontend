@@ -1,6 +1,7 @@
 'use strict';
 var trackApp = angular.module('app');
-trackApp.controller('loginCtrl', ['$scope','$http','$routeParams', '$location', function($scope , $http , $routeParams,$location) {
+trackApp.controller('loginCtrl', ['$scope','$http','$routeParams', '$location','config',
+                          function($scope , $http , $routeParams ,  $location, config) {
 
   $scope.salir = function(){
     $scope.$parent.isAuthenticated = false;
