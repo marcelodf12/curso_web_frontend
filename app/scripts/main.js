@@ -1,9 +1,10 @@
 'use strict';
-var trackApp = angular.module('app', ['ngRoute']);
+var trackApp = angular.module('app', ['ngRoute','ngStorage']);
 
 
-trackApp.config(['$routeProvider','$locationProvider', function($routeProvider,$locationProvider) {
-	$locationProvider.html5Mode(true);
+trackApp.config(['$routeProvider','$locationProvider', '$httpProvider' , function($routeProvider,$locationProvider, $httpProvider) {
+  $locationProvider.html5Mode(true);
+  $httpProvider.interceptors.push('RequestHeadersInterceptor');
   $routeProvider
     .when('/login', {
       templateUrl: 'scripts/modules/login/login.html',
@@ -14,12 +15,20 @@ trackApp.config(['$routeProvider','$locationProvider', function($routeProvider,$
       controller: 'homeCtrl'
     })
     .when('/usuarios', {
-      templateUrl: 'scripts/modules/usuarios/listar_usuarios.html',
+      templateUrl: 'scripts/modules/usuarios/listarUsuarios.html',
       controller: 'usuariosListarCtrl'
     })
     .when('/usuario/:id', {
       templateUrl: 'scripts/modules/usuarios/usuario.html',
       controller: 'usuarioCtrl'
+    })
+    .when('/clientes', {
+      templateUrl: 'scripts/modules/usuarios/listarClientes.html',
+      controller: 'clienteListarCtrl'
+    })
+    .when('/cliente/:id', {
+      templateUrl: 'scripts/modules/usuarios/client.html',
+      controller: 'clienteCtrl'
     })
     .otherwise({
       templateUrl: '404.html'
@@ -33,14 +42,14 @@ trackApp.constant('mensajes', {
   notFound:'Error 404: El elemento no existe'
 });
 trackApp.constant('config', {
-  hostApiRest: 'http://localhost:8081/'
+  hostApiRestV1: 'http://localhost:8081/reservation-api/api/v1/'
 });
 
-trackApp.controller('mainCtrl', ['$scope', '$location', function($scope, $location) {
+trackApp.controller('mainCtrl', ['$scope', '$location', 'UsuarioService', function($scope, $location, UsuarioService) {
 
   $scope.logout = function (){
-    $scope.isAuthenticated = true;
-    $location.path('home/');
+    $scope.isAuthenticated = false;
+    $location.path('login/');
   };
 
   if(typeof($scope.isAuthenticated) === 'undefined'){

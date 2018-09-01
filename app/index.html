@@ -15,8 +15,8 @@
     <!-- inject:css -->
     <link rel="stylesheet" href="/stylesheets/main.css">
     <!-- endinject -->
-  </head>s
-  <body ng-controller="mainCtrl">
+  </head>
+  <body ng-controller="mainCtrl" style="background-color:#fff;">
     <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow" ng-show="isAuthenticated">
       <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">
         <span data-feather="package"></span>
@@ -94,15 +94,20 @@
     <script src="lib/angular/angular.js"></script>
     <script src="lib/angular-route/angular-route.js"></script>
     <script src="lib/angular-resource/angular-resource.js"></script>
+    <script src="lib/ngstorage/ngStorage.min.js"></script>
     <!-- endbower -->
     <!-- inject:js -->
     <script src="/scripts/main.js"></script>
     <script src="/scripts/others/feather.min.js"></script>
     <script src="/scripts/others/popper.min.js"></script>
-    <script src="/scripts/modules/login/login.js"></script>
     <script src="/scripts/modules/home/home.js"></script>
+    <script src="/scripts/modules/login/login.js"></script>
+    <script src="/scripts/modules/login/loginService.js"></script>
+    <script src="/scripts/modules/clientes/clientesCtrl.js"></script>
+    <script src="/scripts/modules/clientes/listarClientesCtrl.js"></script>
     <script src="/scripts/modules/usuarios/usuarioCtrl.js"></script>
     <script src="/scripts/modules/usuarios/usuarioListarCtrl.js"></script>
+    <script src="/scripts/modules/usuarios/usuarioService.js"></script>
     <!-- endinject -->
   </body>
 </html>
